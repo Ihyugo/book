@@ -1,18 +1,8 @@
 require 'test_helper'
 
 class ArticleDocumentsControllerTest < ActionController::TestCase
-  test "should get _left" do
-    get :_left
-    assert_response :success
-  end
-
-  test "should get main" do
-    get :main
-    assert_response :success
-  end
-
-  test "should get top" do
-    get :top
+  test "should get index" do
+    get :index
     assert_response :success
   end
 

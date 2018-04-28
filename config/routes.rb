@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'article_documents/index'
+
   get 'article_documents/_left'
 
   get 'article_documents/main'
