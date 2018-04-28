@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
+  get 'make_document/index' => "make_document#index"
+  post 'make_document/index' => "make_document#index"
+
   get 'article_documents/index'
+  post 'article_documents/index'
 
-  get 'article_documents/_left'
-
-  get 'article_documents/main'
-
-  get 'article_documents/top'
-
-  get 'article_documents/home'
-
-  get 'article_documents/help'
-
-  get 'article_documents/about'
+  get 'make_document/main' => "make_document#main"
 
 	root 'application#index'
   # The priority is based upon order of creation: first created -> highest priority.
