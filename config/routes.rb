@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'article_documents/_left'
+
+  get 'article_documents/main'
+
+  get 'article_documents/top'
+
+  get 'article_documents/home'
+
+  get 'article_documents/help'
+
+  get 'article_documents/about'
+
+	root 'application#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
