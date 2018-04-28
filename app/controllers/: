@@ -1,0 +1,24 @@
+class ArticleDocumentsController < ApplicationController
+  def index
+	  if params[:name].nil?
+	  @index = "there are no index"
+	  content = []
+	  f = File.open('file/sample.odt','r')
+	  f.each do |text|
+		  content.push(text)
+	  end
+	  f.close()
+	  document = content.join
+	  @content = document
+	  else
+	  url = "https://www.sciencenews.org/" + params[:name]
+	  agent = Mechanize.new
+	  page= agent.get(url)
+	  document = page.search('//div[@class="field-items"]')
+	  puts document
+	  puts "aaaa"
+	  #document = content.join
+	  @content = document
+	  end
+  end
+end

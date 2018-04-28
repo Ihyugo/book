@@ -3,7 +3,6 @@ class MakeDocumentController < ApplicationController
 	  agent = Mechanize.new
 	  page = agent.get("https://www.sciencenews.org/")
 	  elements = page.search('//h2[@class="node-title"]')
-	  el = page.search(".node-title")
 	  contents = []
 	  elements.each do |ele|
 		  methods = []
