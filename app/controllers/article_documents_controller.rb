@@ -22,10 +22,10 @@ class ArticleDocumentsController < ApplicationController
 		  contents.push("\n\n")
 	  end
 	  contents = contents.join
-	  file_name = "file/"+ params[:title]+".odt"
-	  f = File.open(file_name,'w')
-	  f.puts(contents)
-	  f.close()
+	  @newfile = ArticleFile.new
+	  @newfile.title = params[:title]
+	  @newfile.text = contents
+	  @newfile.save
 	  @content = contents
 	  end
   end
