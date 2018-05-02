@@ -2,6 +2,10 @@ class ArticleDocumentsController < ApplicationController
   def index
 	  if params[:root].nil?
 	  @index = "there are no index"
+	  if @content.nil?
+		  @content_name = ArticleFile.last.title
+		  @content = ArticleFile.last.text
+	  end
 	  else
 	  url = "https://www.sciencenews.org/" + params[:root]
 	  documents = make_text(url)
@@ -14,6 +18,7 @@ class ArticleDocumentsController < ApplicationController
 	  if ArticleFile.find_by(title: params[:title]).nil?
 		  save_text(contents)
 	  end
+	  @content_name = params[:title]
 	  @content = contents
 	  end
   end
