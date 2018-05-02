@@ -8,6 +8,7 @@ class ArticleDocumentsController < ApplicationController
 	  end
 	  else
 	  url = "https://www.sciencenews.org/" + params[:root]
+	  @url = url
 	  documents = make_text(url)
 	  contents = []
 	  documents.each do |document|
